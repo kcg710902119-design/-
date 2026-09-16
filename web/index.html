@@ -1,0 +1,1148 @@
+<title>제갈량 상소문</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;900&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+  /* 蜀漢 궁궐의 밤 — 단일 화면세계로 정한 색. 호스트가 밝은 테마여도 이 색을 그대로 칠한다. */
+  :root {
+    --night:      #0C0907;
+    --lacquer:    #1A120E;
+    --lacquer-2:  #241811;
+    --vermilion:  #A5302A;
+    --vermilion-d:#6E1E1B;
+    --gold:       #C9A24B;
+    --gold-dim:   #8A6E31;
+    --paper:      #E9DFC6;
+    --paper-2:    #DCCFAE;
+    --paper-edge: #C6B489;
+    --sumi:       #241B12;
+    --sumi-soft:  #4A3B2B;
+    --jade:       #4E6F63;
+    --ash:        #D7DCD6;
+
+    --serif: "Noto Serif KR", "Nanum Myeongjo", "Apple SD Gothic Neo", serif;
+    --sans:  "Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif;
+  }
+
+  html, body { background: var(--night); }
+  body {
+    margin: 0;
+    color: var(--paper);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-inline: 16px;
+    padding-block: 0 56px;
+  }
+
+  /* ── 조정 상단 표제 ── */
+  .court-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px 20px;
+    padding-block: 18px 12px;
+    border-bottom: 1px solid rgba(201,162,75,.28);
+  }
+  .court-head h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 900;
+    font-size: clamp(1.05rem, 2.6vw, 1.45rem);
+    letter-spacing: .16em;
+    color: var(--gold);
+  }
+  .court-head h1 span { color: var(--paper-edge); font-weight: 600; letter-spacing: .08em; }
+  .court-date {
+    font-size: .78rem;
+    letter-spacing: .12em;
+    color: var(--paper-edge);
+    font-variant-numeric: tabular-nums;
+  }
+  .court-date b { color: var(--gold); font-weight: 500; }
+
+  /* ── 궁궐 장면 ── */
+  .hall {
+    position: relative;
+    margin-top: 14px;
+    aspect-ratio: 2 / 1;
+    border: 1px solid rgba(201,162,75,.30);
+    border-radius: 2px;
+    overflow: hidden;
+    background: var(--night);
+  }
+  .hall svg { display: block; width: 100%; height: 100%; }
+
+  /* 승상의 말풍선 */
+  .bubble {
+    position: absolute;
+    top: 5%;
+    right: 3.5%;
+    width: min(50%, 440px);
+    background: var(--paper);
+    color: var(--sumi);
+    border: 1px solid var(--paper-edge);
+    border-radius: 14px;
+    padding: 14px 18px 16px;
+    box-shadow: 0 10px 34px rgba(0,0,0,.55);
+  }
+  .bubble::after {
+    content: "";
+    position: absolute;
+    left: 7%;
+    bottom: -15px;
+    width: 0; height: 0;
+    border: 9px solid transparent;
+    border-top: 16px solid var(--paper);
+    filter: drop-shadow(0 2px 0 var(--paper-edge));
+  }
+  .bubble .tag {
+    display: inline-block;
+    font-family: var(--serif);
+    font-weight: 900;
+    font-size: .68rem;
+    letter-spacing: .22em;
+    color: var(--vermilion-d);
+    border-bottom: 1px solid rgba(110,30,27,.35);
+    padding-bottom: 3px;
+    margin-bottom: 9px;
+  }
+  .bubble p {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(.95rem, 1.35vw, 1.18rem);
+    line-height: 1.75;
+    min-height: 3.5em;
+    word-break: keep-all;
+  }
+  .caret { color: var(--vermilion); animation: blink 1.05s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* ── 두루마리 상소문 ── */
+  .scroll {
+    position: relative;
+    margin-top: 30px;
+    background:
+      radial-gradient(120% 60% at 50% 0%, #F0E7D1 0%, var(--paper) 45%, var(--paper-2) 100%);
+    color: var(--sumi);
+    border: 1px solid var(--paper-edge);
+    box-shadow: 0 18px 50px rgba(0,0,0,.55);
+  }
+  .rod {
+    height: 22px;
+    background: linear-gradient(180deg, var(--vermilion) 0%, var(--vermilion-d) 60%, #4A1412 100%);
+    border-block: 1px solid var(--gold-dim);
+    position: relative;
+  }
+  .rod::before, .rod::after {
+    content: "";
+    position: absolute; top: -4px; width: 14px; height: 30px;
+    background: linear-gradient(180deg, var(--gold) 0%, var(--gold-dim) 100%);
+    border-radius: 3px;
+  }
+  .rod::before { left: -7px; }
+  .rod::after  { right: -7px; }
+
+  .sheet {
+    padding: clamp(22px, 4.5vw, 52px) clamp(18px, 4.5vw, 62px);
+    border-block: 1px solid rgba(198,180,137,.9);
+  }
+  .sheet-inner { max-width: 40em; margin-inline: auto; }
+
+  .preamble {
+    text-align: center;
+    font-family: var(--serif);
+    margin-bottom: clamp(24px, 4vw, 40px);
+  }
+  .preamble .seal-line {
+    font-size: .72rem; letter-spacing: .34em; color: var(--sumi-soft);
+  }
+  .preamble .big {
+    margin: 10px 0 6px;
+    font-size: clamp(1.5rem, 4.4vw, 2.3rem);
+    font-weight: 900;
+    letter-spacing: .3em;
+    color: var(--sumi);
+    text-indent: .3em;
+  }
+  .preamble .sub { font-size: .84rem; color: var(--sumi-soft); letter-spacing: .05em; }
+
+  .chapter { margin-top: clamp(30px, 5vw, 54px); }
+  .chapter:first-of-type { margin-top: 0; }
+
+  .chapter-head {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba(36,27,18,.55);
+  }
+  .chapter-num {
+    flex: none;
+    font-family: var(--serif); font-weight: 900; font-size: .74rem;
+    letter-spacing: .12em; color: var(--paper);
+    background: var(--vermilion-d);
+    padding: 7px 9px;
+    border-radius: 2px;
+    writing-mode: vertical-rl;
+  }
+  .chapter-title { min-width: 0; }
+  .chapter-title h2 {
+    margin: 0;
+    font-family: var(--serif); font-weight: 900;
+    font-size: clamp(1.18rem, 3vw, 1.62rem);
+    letter-spacing: .06em;
+    color: var(--sumi);
+    text-wrap: balance;
+  }
+  .chapter-title .kicker {
+    display: block; margin-top: 4px;
+    font-size: .76rem; letter-spacing: .14em; color: var(--sumi-soft);
+  }
+
+  .body-text p {
+    font-family: var(--serif);
+    font-size: clamp(1rem, 1.45vw, 1.12rem);
+    line-height: 2.15;
+    margin: 0 0 1.35em;
+    text-align: justify;
+    word-break: keep-all;
+    color: #1F1811;
+  }
+  .body-text p:first-child::first-line {
+    font-weight: 600;
+  }
+  .body-text p:first-child::first-letter {
+    font-size: 1.35em; font-weight: 900; color: var(--vermilion-d);
+  }
+  .body-text p.streaming { white-space: pre-wrap; text-align: left; }
+
+  .count-line {
+    margin-top: 10px;
+    font-family: var(--sans);
+    font-size: .74rem; letter-spacing: .06em; color: var(--sumi-soft);
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+
+  .signoff {
+    margin-top: clamp(34px, 5vw, 56px);
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 18px; flex-wrap: wrap;
+    border-top: 1px solid rgba(36,27,18,.3);
+    padding-top: 22px;
+  }
+  .signoff .words {
+    font-family: var(--serif); font-size: .92rem; line-height: 1.9; color: var(--sumi-soft);
+  }
+  .seal {
+    flex: none;
+    width: 82px; height: 82px;
+    border: 3px solid var(--vermilion-d);
+    border-radius: 4px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    place-items: center;
+    color: var(--vermilion-d);
+    font-family: var(--serif); font-weight: 900; font-size: 1.5rem;
+    transform: rotate(-4deg);
+    opacity: .88;
+  }
+
+  /* ── 조정의 의례 — 조작부 ── */
+  .actions {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-top: 22px;
+  }
+  button.rite {
+    font-family: var(--sans); font-size: .82rem; font-weight: 500; letter-spacing: .04em;
+    color: var(--paper);
+    background: var(--lacquer-2);
+    border: 1px solid rgba(201,162,75,.42);
+    border-radius: 2px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background .15s, border-color .15s, color .15s;
+  }
+  button.rite:hover:not(:disabled) { background: var(--vermilion-d); border-color: var(--gold); }
+  button.rite:disabled { opacity: .42; cursor: default; }
+  button.rite.primary { background: var(--vermilion-d); border-color: var(--gold); }
+  button.rite:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  .status {
+    margin-top: 12px;
+    font-size: .8rem; line-height: 1.7; color: var(--paper-edge);
+    min-height: 1.7em;
+  }
+  .status.warn { color: #E0A87A; }
+
+  /* ── 문답 창 ── */
+  dialog {
+    background: var(--lacquer);
+    color: var(--paper);
+    border: 1px solid rgba(201,162,75,.4);
+    border-radius: 3px;
+    max-width: min(640px, 92vw);
+    width: 100%;
+    padding: 0;
+  }
+  dialog::backdrop { background: rgba(6,4,3,.78); }
+  .dlg-head {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(201,162,75,.24);
+    font-family: var(--serif); font-weight: 900; letter-spacing: .14em; color: var(--gold);
+  }
+  .dlg-body { padding: 18px 20px; }
+  .dlg-body p.note { margin: 0 0 12px; font-size: .8rem; line-height: 1.8; color: var(--paper-edge); }
+  .dlg-body textarea {
+    width: 100%; box-sizing: border-box;
+    min-height: 260px; resize: vertical;
+    background: #120C09; color: var(--paper);
+    border: 1px solid rgba(201,162,75,.3);
+    border-radius: 2px;
+    padding: 12px 14px;
+    font-family: var(--sans); font-size: .86rem; line-height: 1.85;
+  }
+  .dlg-body textarea:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+  .dlg-foot { display: flex; gap: 10px; justify-content: flex-end; padding: 0 20px 18px; }
+
+  .archive-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; max-height: 50vh; overflow-y: auto; }
+  .archive-list button {
+    width: 100%; text-align: left;
+    background: #120C09; color: var(--paper);
+    border: 1px solid rgba(201,162,75,.22);
+    border-radius: 2px; padding: 11px 13px; cursor: pointer;
+    font-family: var(--sans); font-size: .82rem; line-height: 1.6;
+  }
+  .archive-list button:hover { border-color: var(--gold); }
+  .archive-list .d { color: var(--gold); font-variant-numeric: tabular-nums; letter-spacing: .06em; }
+  .archive-list .t { color: var(--paper-edge); }
+
+  /* ── 좁은 화면 ── */
+  @media (max-width: 760px) {
+    .hall { aspect-ratio: 5 / 6; }
+    .bubble { left: 4%; right: 4%; width: auto; top: 3.5%; padding: 11px 13px 13px; }
+    .bubble::after { left: 46%; }
+    .bubble p { font-size: .9rem; line-height: 1.65; min-height: 0; }
+    .bubble .tag { margin-bottom: 7px; }
+    .seal { width: 66px; height: 66px; font-size: 1.15rem; }
+    .body-text p { line-height: 2.0; text-align: left; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .caret { animation: none; }
+    .kowtow, .flame, .smoke { animation: none !important; }
+  }
+
+  /* ── 인쇄: 상소문만 ── */
+  @media print {
+    body { background: #fff; }
+    .hall, .actions, .status, .court-head, dialog { display: none !important; }
+    .scroll { box-shadow: none; border: none; margin: 0; background: #fff; }
+    .rod { display: none; }
+    .sheet { border: none; padding: 0; }
+    .body-text p { color: #000; }
+  }
+
+  /* 궁궐 장면 애니메이션 */
+  .kowtow { animation: kowtow 6.5s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
+  @keyframes kowtow {
+    0%, 82%, 100% { transform: translateY(0); }
+    88%           { transform: translateY(3.5px); }
+    94%           { transform: translateY(0.6px); }
+  }
+  .flame { animation: flicker 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  @keyframes flicker {
+    0%, 100% { opacity: .85; transform: scale(1); }
+    38%      { opacity: 1;   transform: scale(1.08); }
+    62%      { opacity: .7;  transform: scale(.95); }
+  }
+  .smoke { animation: rise 9s linear infinite; transform-box: fill-box; }
+  @keyframes rise {
+    0%   { opacity: 0;   transform: translateY(4px) scaleX(1); }
+    25%  { opacity: .30; }
+    100% { opacity: 0;   transform: translateY(-46px) scaleX(1.7); }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="court-head">
+    <h1>蜀漢 丞相 上疏 <span>· 제갈량 상소문</span></h1>
+    <div class="court-date" id="courtDate">—</div>
+  </header>
+
+  <!-- ══ 궁궐: 선제의 위패 앞, 승상이 조정에 임하다 ══ -->
+  <div class="hall">
+    <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" role="img"
+         aria-label="촉한 성도의 궁궐. 선제 유비의 위패 앞 단상에 승상 제갈량이 백우선을 들고 서 있고, 그 앞에 여덟 신하가 엎드려 있다.">
+      <defs>
+        <linearGradient id="gNight" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#120C09"/>
+          <stop offset="55%"  stop-color="#0C0907"/>
+          <stop offset="100%" stop-color="#070504"/>
+        </linearGradient>
+        <linearGradient id="gColumn" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"   stop-color="#5E1B18"/>
+          <stop offset="38%"  stop-color="#A5302A"/>
+          <stop offset="72%"  stop-color="#7E241F"/>
+          <stop offset="100%" stop-color="#4A1412"/>
+        </linearGradient>
+        <linearGradient id="gRobe" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#EDF1EC"/>
+          <stop offset="65%"  stop-color="#D3DBD4"/>
+          <stop offset="100%" stop-color="#AFBCB4"/>
+        </linearGradient>
+        <linearGradient id="gCarpet" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#7E241F"/>
+          <stop offset="100%" stop-color="#40100F"/>
+        </linearGradient>
+        <radialGradient id="gLamp" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stop-color="#F6C86A" stop-opacity=".62"/>
+          <stop offset="60%"  stop-color="#C9812B" stop-opacity=".22"/>
+          <stop offset="100%" stop-color="#C9812B" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="gHalo" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stop-color="#E8D9A8" stop-opacity=".22"/>
+          <stop offset="100%" stop-color="#E8D9A8" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <rect x="0" y="0" width="1200" height="600" fill="url(#gNight)"/>
+
+      <!-- 뒷벽: 격자 문살 세 칸 -->
+      <g opacity=".5">
+        <rect x="150"  y="92" width="290" height="330" fill="#191008" stroke="#6E5225" stroke-width="1.5"/>
+        <rect x="470"  y="92" width="260" height="330" fill="#1B1109" stroke="#6E5225" stroke-width="1.5"/>
+        <rect x="760"  y="92" width="290" height="330" fill="#191008" stroke="#6E5225" stroke-width="1.5"/>
+        <g stroke="#5A431E" stroke-width="1" opacity=".55">
+          <path d="M150 162h290M150 232h290M150 302h290M150 372h290M222 92v330M294 92v330M366 92v330"/>
+          <path d="M760 162h290M760 232h290M760 302h290M760 372h290M832 92v330M904 92v330M976 92v330"/>
+        </g>
+      </g>
+
+      <!-- 처마와 두공(斗栱) -->
+      <rect x="0" y="0" width="1200" height="56" fill="#3C110F"/>
+      <rect x="0" y="52" width="1200" height="10" fill="#A5302A"/>
+      <rect x="0" y="62" width="1200" height="4"  fill="#C9A24B" opacity=".75"/>
+      <g fill="#7E241F" stroke="#C9A24B" stroke-width="1.4" opacity=".92">
+        <path d="M60 66h56v14H60zM50 80h76v12H50z"/>
+        <path d="M260 66h56v14h-56zM250 80h76v12h-76z"/>
+        <path d="M460 66h56v14h-56zM450 80h76v12h-76z"/>
+        <path d="M660 66h56v14h-56zM650 80h76v12h-76z"/>
+        <path d="M860 66h56v14h-56zM850 80h76v12h-76z"/>
+        <path d="M1060 66h56v14h-56zM1050 80h76v12h-76z"/>
+      </g>
+
+      <!-- 궁등(宮燈) 여섯 -->
+      <g>
+        <g transform="translate(200,0)">
+          <circle cx="0" cy="150" r="74" fill="url(#gLamp)" class="flame"/>
+          <path d="M0 92v22" stroke="#C9A24B" stroke-width="2"/>
+          <rect x="-17" y="114" width="34" height="46" rx="14" fill="#A5302A" stroke="#C9A24B" stroke-width="1.6"/>
+          <rect x="-7" y="160" width="14" height="9" fill="#C9A24B"/>
+        </g>
+        <g transform="translate(420,0)">
+          <circle cx="0" cy="142" r="66" fill="url(#gLamp)" class="flame" style="animation-delay:-.9s"/>
+          <path d="M0 92v16" stroke="#C9A24B" stroke-width="2"/>
+          <rect x="-15" y="108" width="30" height="42" rx="13" fill="#A5302A" stroke="#C9A24B" stroke-width="1.6"/>
+          <rect x="-6" y="150" width="12" height="8" fill="#C9A24B"/>
+        </g>
+        <g transform="translate(780,0)">
+          <circle cx="0" cy="142" r="66" fill="url(#gLamp)" class="flame" style="animation-delay:-1.7s"/>
+          <path d="M0 92v16" stroke="#C9A24B" stroke-width="2"/>
+          <rect x="-15" y="108" width="30" height="42" rx="13" fill="#A5302A" stroke="#C9A24B" stroke-width="1.6"/>
+          <rect x="-6" y="150" width="12" height="8" fill="#C9A24B"/>
+        </g>
+        <g transform="translate(1000,0)">
+          <circle cx="0" cy="150" r="74" fill="url(#gLamp)" class="flame" style="animation-delay:-2.4s"/>
+          <path d="M0 92v22" stroke="#C9A24B" stroke-width="2"/>
+          <rect x="-17" y="114" width="34" height="46" rx="14" fill="#A5302A" stroke="#C9A24B" stroke-width="1.6"/>
+          <rect x="-7" y="160" width="14" height="9" fill="#C9A24B"/>
+        </g>
+      </g>
+
+      <!-- 선제(先帝)의 위패 -->
+      <g>
+        <rect x="560" y="96" width="80" height="150" rx="3" fill="#130D09" stroke="#C9A24B" stroke-width="2.2"/>
+        <rect x="568" y="104" width="64" height="134" fill="none" stroke="#8A6E31" stroke-width="1"/>
+        <g fill="#C9A24B" font-family="'Noto Serif KR', serif" font-weight="900" font-size="17" text-anchor="middle">
+          <text x="600" y="124">漢</text>
+          <text x="600" y="146">昭</text>
+          <text x="600" y="168">烈</text>
+          <text x="600" y="190">皇</text>
+          <text x="600" y="212">帝</text>
+          <text x="600" y="234">位</text>
+        </g>
+        <!-- 제상(祭床) -->
+        <rect x="486" y="250" width="228" height="13" fill="#4A1412" stroke="#C9A24B" stroke-width="1.2"/>
+        <rect x="500" y="263" width="10" height="44" fill="#3A100F"/>
+        <rect x="690" y="263" width="10" height="44" fill="#3A100F"/>
+        <!-- 향로와 향연 -->
+        <g>
+          <path class="smoke" d="M522 244c-4-12 6-18 1-30" stroke="#E8D9A8" stroke-width="2" fill="none" opacity=".3" stroke-linecap="round"/>
+          <path d="M510 236h26l-4 14h-18z" fill="#8A6E31" stroke="#C9A24B" stroke-width="1"/>
+        </g>
+        <g>
+          <path class="smoke" style="animation-delay:-4.5s" d="M678 244c5-12-6-18-1-30" stroke="#E8D9A8" stroke-width="2" fill="none" opacity=".3" stroke-linecap="round"/>
+          <path d="M664 236h26l-4 14h-18z" fill="#8A6E31" stroke="#C9A24B" stroke-width="1"/>
+        </g>
+      </g>
+
+      <!-- 단(壇)과 계단 -->
+      <rect x="420" y="404" width="360" height="26" fill="#2A1A10" stroke="#6E5225" stroke-width="1.2"/>
+      <rect x="392" y="430" width="416" height="24" fill="#241610" stroke="#6E5225" stroke-width="1.2"/>
+      <rect x="364" y="454" width="472" height="24" fill="#1E120C" stroke="#6E5225" stroke-width="1.2"/>
+      <!-- 붉은 융단 -->
+      <path d="M552 404h96l58 196H494z" fill="url(#gCarpet)" opacity=".92"/>
+      <path d="M552 404h96l58 196H494z" fill="none" stroke="#C9A24B" stroke-width="1" opacity=".45"/>
+
+      <!-- 바닥 전돌 -->
+      <rect x="0" y="478" width="1200" height="122" fill="#0E0A07"/>
+      <g stroke="#3A2A16" stroke-width="1" opacity=".55">
+        <path d="M0 506h1200M0 540h1200M0 578h1200"/>
+        <path d="M120 478v122M300 478v122M480 478v122M720 478v122M900 478v122M1080 478v122"/>
+      </g>
+
+      <!-- 주칠 기둥 -->
+      <g>
+        <rect x="64"  y="56" width="52" height="422" fill="url(#gColumn)"/>
+        <rect x="64"  y="96" width="52" height="7" fill="#C9A24B" opacity=".7"/>
+        <rect x="56"  y="468" width="68" height="16" fill="#2A1A10" stroke="#6E5225" stroke-width="1"/>
+        <rect x="1084" y="56" width="52" height="422" fill="url(#gColumn)"/>
+        <rect x="1084" y="96" width="52" height="7" fill="#C9A24B" opacity=".7"/>
+        <rect x="1076" y="468" width="68" height="16" fill="#2A1A10" stroke="#6E5225" stroke-width="1"/>
+      </g>
+
+      <!-- ── 승상 제갈량 ── 윤건, 학창의, 백우선 ── -->
+      <g>
+        <circle cx="600" cy="330" r="132" fill="url(#gHalo)"/>
+        <!-- 도포 자락 -->
+        <path d="M600 292c-26 0-44 12-49 32l-30 82h158l-30-82c-5-20-23-32-49-32z" fill="url(#gRobe)"/>
+        <path d="M521 406h158l6 18H515z" fill="#C0CAC2"/>
+        <!-- 넓은 소매 -->
+        <path d="M556 306c-22 6-36 22-42 44l-8 30 34 8 22-62z" fill="#E2E8E2"/>
+        <path d="M644 306c22 6 36 22 42 44l8 30-34 8-22-62z" fill="#E2E8E2"/>
+        <!-- 옷깃 (청) -->
+        <path d="M600 292l-17 12 17 40 17-40z" fill="#4E6F63"/>
+        <path d="M553 350l-8 28" stroke="#4E6F63" stroke-width="3" fill="none" opacity=".7"/>
+        <path d="M647 350l8 28" stroke="#4E6F63" stroke-width="3" fill="none" opacity=".7"/>
+        <!-- 허리띠 -->
+        <rect x="574" y="352" width="52" height="9" rx="2" fill="#4E6F63"/>
+        <rect x="592" y="352" width="16" height="9" fill="#C9A24B" opacity=".85"/>
+        <!-- 목, 얼굴 -->
+        <rect x="592" y="278" width="16" height="16" fill="#E5D3B4"/>
+        <ellipse cx="600" cy="266" rx="19" ry="22" fill="#EFE0C4"/>
+        <!-- 윤건(綸巾) -->
+        <path d="M600 238c-17 0-27 9-27 19 0 4 2 7 5 9h44c3-2 5-5 5-9 0-10-10-19-27-19z" fill="#20303A"/>
+        <path d="M573 250h54v7h-54z" fill="#2B4250"/>
+        <path d="M627 254l12 6-4 8-10-8z" fill="#20303A"/>
+        <!-- 눈, 수염 -->
+        <path d="M591 263h7M602 263h7" stroke="#3A2C1C" stroke-width="2" stroke-linecap="round"/>
+        <path d="M588 276c3 3 8 4 12 4s9-1 12-4l-4 16c-2 8-4 14-8 18-4-4-6-10-8-18z" fill="#CFC5AE"/>
+        <path d="M586 272c-2 6-1 12 2 16M614 272c2 6 1 12-2 16" stroke="#CFC5AE" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- 백우선(白羽扇) -->
+        <g transform="rotate(16 664 330)">
+          <path d="M664 300c16 0 27 13 27 29s-11 27-27 27-27-11-27-27 11-29 27-29z" fill="#F4F1E6" stroke="#CBBE9F" stroke-width="1.4"/>
+          <g stroke="#D8CFB4" stroke-width="1"><path d="M664 302v52M646 316l36 22M646 338l36-22"/></g>
+          <rect x="661" y="354" width="6" height="30" rx="3" fill="#7A5A2E"/>
+        </g>
+      </g>
+
+      <!-- ── 엎드린 신하 여덟 ── -->
+      <g id="ministers"></g>
+
+      <!-- 전각 앞 어둠 -->
+      <rect x="0" y="560" width="1200" height="40" fill="#060403" opacity=".6"/>
+    </svg>
+
+    <div class="bubble">
+      <span class="tag">오늘의 한마디</span>
+      <p id="hanmadi">…</p>
+    </div>
+  </div>
+
+  <!-- ══ 상소문 두루마리 ══ -->
+  <article class="scroll">
+    <div class="rod"></div>
+    <div class="sheet">
+      <div class="sheet-inner">
+
+        <div class="preamble">
+          <div class="seal-line">臣 亮 言</div>
+          <div class="big">出 師 上 疏</div>
+          <div class="sub" id="preambleSub">승상 제갈량이 삼가 폐하께 올리는 글</div>
+        </div>
+
+        <section class="chapter">
+          <div class="chapter-head">
+            <div class="chapter-num">第一章</div>
+            <div class="chapter-title">
+              <h2 id="ch1Title">—</h2>
+              <span class="kicker">클로드코드의 計策 · 초심자를 위하여</span>
+            </div>
+          </div>
+          <div class="body-text" id="ch1Body"></div>
+          <div class="count-line" id="ch1Count"></div>
+        </section>
+
+        <section class="chapter">
+          <div class="chapter-head">
+            <div class="chapter-num">第二章</div>
+            <div class="chapter-title">
+              <h2 id="ch2Title">—</h2>
+              <span class="kicker">폐하의 앞길 · 생업과 삶의 방향</span>
+            </div>
+          </div>
+          <div class="body-text" id="ch2Body"></div>
+          <div class="count-line" id="ch2Count"></div>
+        </section>
+
+        <div class="signoff">
+          <div class="words">
+            臣, 몸을 굽혀 두 번 절하고 삼가 아뢰옵니다.<br>
+            鞠躬盡瘁 死而後已 — 몸을 굽혀 힘을 다하고, 죽은 뒤에야 그치옵니다.
+          </div>
+          <div class="seal" aria-label="제갈량인">
+            <span>諸</span><span>葛</span><span>亮</span><span>印</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="rod"></div>
+  </article>
+
+  <div class="actions">
+    <button class="rite primary" id="btnNew" type="button">오늘의 상소를 새로 청하다</button>
+    <button class="rite" id="btnArchive" type="button">지난 상소를 펴 보다</button>
+    <button class="rite" id="btnProfile" type="button">승상께 아뢰어 기록을 고치다</button>
+    <button class="rite" id="btnPrint" type="button">인쇄</button>
+  </div>
+  <p class="status" id="status"></p>
+
+</div>
+
+<dialog id="dlgProfile">
+  <div class="dlg-head">丞相의 記錄</div>
+  <div class="dlg-body">
+    <p class="note">승상이 매일 상소를 지을 때 읽는 기록입니다. 여기에 적으신 내용만 반영되며, 사무실에서 고치면 집에서도 같이 바뀝니다.</p>
+    <textarea id="profileText" aria-label="승상의 기록"></textarea>
+  </div>
+  <div class="dlg-foot">
+    <button class="rite" type="button" data-close>물리다</button>
+    <button class="rite primary" type="button" id="btnSaveProfile">기록에 새기다</button>
+  </div>
+</dialog>
+
+<dialog id="dlgArchive">
+  <div class="dlg-head">지난 上疏</div>
+  <div class="dlg-body">
+    <p class="note" id="archiveNote">—</p>
+    <ul class="archive-list" id="archiveList"></ul>
+  </div>
+  <div class="dlg-foot">
+    <button class="rite" type="button" data-close>닫다</button>
+  </div>
+</dialog>
+
+<script src="sangso.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  /* ═══ 폐하에 관한 기본 기록 ═══
+     (승상께 아뢰어 언제든 고칠 수 있다) */
+  var DEFAULT_PROFILE = [
+    "1971년생. 2026년 현재 만 55세.",
+    "소방공무원. 현장지휘팀장. 서른 해 가까이 화재 현장을 지휘해 왔다.",
+    "2031년 정년 퇴직 예정이며 그 뒤 연금을 받는다. 남은 재직 기간은 약 5년.",
+    "거주지는 인천 송도. 주택을 여러 채 보유하고 있으나 매매·세무 판단은 전문가에게 맡긴다.",
+    "실제 업무: 화재방어 검토회의 발표자료(PPT), 소방시설 3D 시각화(three.js), 한글 공문(HWPX), 엑셀 서식.",
+    "엑셀 규칙: 수동입력 셀은 노란색, 표 바깥선 중간 굵은 실선·안쪽 점선(모두 검정), 행높이 20, 상하 가운데 정렬, 1개 시트, 금액은 원 단위·'원' 글자 삭제·우측정렬, 수식은 되도록 VLOOKUP.",
+    "Claude Code는 2025년 9월에 처음 잡았다. 스스로 초보라고 여긴다.",
+    "관심사: 클로드코드를 업무에 제대로 쓰는 법, 퇴직 이후의 방향, 서른 해의 현장 경험을 남기는 일."
+  ].join("\n");
+
+  /* ═══ 오늘의 주제 축 — 날마다 다른 결의 상소가 나오도록 ═══ */
+  var SEEDS_1 = [
+    "명을 내리는 법 — 프롬프트를 크게 주고 세부는 맡기는 법",
+    "계획을 먼저 묻는 법 — 큰 일 앞에서 설계부터 받는 법",
+    "일을 작게 쪼개는 법 — 한 번에 하나씩 확인하며 나아가는 법",
+    "자료를 함께 주는 법 — 예시 파일과 이전 결과물을 붙이는 법",
+    "되돌릴 길을 내는 법 — 버전을 남기고 과감해지는 법",
+    "규칙을 문서로 세우는 법 — 매번 같은 지시를 반복하지 않는 법",
+    "결과를 검수하는 법 — 눈으로 확인하고 수치를 흔들어 보는 법",
+    "오류를 전하는 법 — 무엇을 했고 무엇이 나왔는지 그대로 옮기는 법",
+    "반복 업무를 넘기는 법 — 이달에 세 번 이상 한 일을 찾아 맡기는 법",
+    "작은 일부터 묻는 법 — 큰 일에만 부르지 않는 법"
+  ];
+  var SEEDS_2 = [
+    "남은 5년의 설계 — 축적·시험·이행의 3단계",
+    "서른 해의 현장 지식을 밖으로 꺼내 문서로 남기는 일",
+    "퇴직이 가져오는 것은 소득의 감소가 아니라 자리와 소속의 상실이라는 점",
+    "관 밖에서의 이름 한 문장을 좁혀 세우는 일",
+    "급한 일과 중한 일을 가르고 하루의 첫 시간을 지키는 일",
+    "몸과 사람 — 건강과 관계를 계획의 첫 줄에 두는 일",
+    "재무는 원칙만 — 최악의 경우를 기준으로 삼고 잠을 지키는 일",
+    "가족과의 합의 — 물러난 뒤의 시간표를 미리 함께 정하는 일",
+    "전선을 줄이는 일 — 무엇을 놓을지 먼저 정하는 일",
+    "배움을 멈추지 않는 일과 배운 것을 가르쳐 보는 일"
+  ];
+
+  /* ═══ 날짜 · 간지 ═══ */
+  var STEMS   = "甲乙丙丁戊己庚辛壬癸".split("");
+  var BRANCHES= "子丑寅卯辰巳午未申酉戌亥".split("");
+
+  function dateKey(d) {
+    return d.getFullYear() + "-" +
+      String(d.getMonth() + 1).padStart(2, "0") + "-" +
+      String(d.getDate()).padStart(2, "0");
+  }
+  function jdn(d) {
+    var Y = d.getFullYear(), M = d.getMonth() + 1, D = d.getDate();
+    var a = Math.floor((14 - M) / 12), y = Y + 4800 - a, m = M + 12 * a - 3;
+    return D + Math.floor((153 * m + 2) / 5) + 365 * y +
+      Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) - 32045;
+  }
+  function ganji(d) {
+    var j = jdn(d);
+    var yr = d.getFullYear();
+    var ys = STEMS[((yr - 4) % 10 + 10) % 10], yb = BRANCHES[((yr - 4) % 12 + 12) % 12];
+    return {
+      year: ys + yb,
+      day: STEMS[((j + 9) % 10 + 10) % 10] + BRANCHES[((j + 1) % 12 + 12) % 12]
+    };
+  }
+  function dayIndex(d) { return Math.floor(jdn(d)); }
+
+  /* ═══ 요소 ═══ */
+  var $ = function (id) { return document.getElementById(id); };
+  var elHanmadi = $("hanmadi"), elCh1T = $("ch1Title"), elCh1B = $("ch1Body"), elCh1C = $("ch1Count"),
+      elCh2T = $("ch2Title"), elCh2B = $("ch2Body"), elCh2C = $("ch2Count"),
+      elStatus = $("status"), elDate = $("courtDate"), elSub = $("preambleSub");
+
+  function noSpace(s) { return s.replace(/\s/g, "").length; }
+  function setCount(el, text, target) {
+    var n = noSpace(text);
+    el.textContent = "第" + (target === 2000 ? "一" : "二") + "章 " + n.toLocaleString("ko-KR") +
+      "자 (공백 제외) · 기준 " + target.toLocaleString("ko-KR") + "자";
+  }
+  function paint(el, paras) {
+    el.textContent = "";
+    paras.forEach(function (t) {
+      var p = document.createElement("p");
+      p.textContent = t;
+      el.appendChild(p);
+    });
+  }
+
+  var typeTimer = null;
+  function sayHanmadi(text) {
+    if (typeTimer) { clearInterval(typeTimer); typeTimer = null; }
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) { elHanmadi.textContent = text; return; }
+    var i = 0;
+    elHanmadi.textContent = "";
+    var caret = document.createElement("span");
+    caret.className = "caret";
+    caret.textContent = "▍";
+    elHanmadi.appendChild(caret);
+    typeTimer = setInterval(function () {
+      i += 1;
+      caret.remove();
+      elHanmadi.textContent = text.slice(0, i);
+      if (i >= text.length) { clearInterval(typeTimer); typeTimer = null; return; }
+      elHanmadi.appendChild(caret);
+    }, 55);
+  }
+
+  function render(doc) {
+    sayHanmadi(doc.hanmadi);
+    elCh1T.textContent = doc.ch1.title;
+    paint(elCh1B, doc.ch1.body);
+    setCount(elCh1C, doc.ch1.body.join(""), 2000);
+    elCh2T.textContent = doc.ch2.title;
+    paint(elCh2B, doc.ch2.body);
+    setCount(elCh2C, doc.ch2.body.join(""), 3000);
+    elSub.textContent = doc.origin === "亮"
+      ? "승상이 " + doc.date + "에 친히 지어 올린 상소"
+      : "승상이 예로부터 갈무리해 둔 상소 (" + doc.date + " 봉독)";
+  }
+
+  /* ═══ 엎드린 신하 여덟을 세운다 ═══ */
+  (function ministers() {
+    var g = document.getElementById("ministers");
+    if (!g) return;
+    var spots = [
+      { x: 250, y: 470, s: 0.86 }, { x: 402, y: 470, s: 0.86 },
+      { x: 798, y: 470, s: 0.86 }, { x: 950, y: 470, s: 0.86 },
+      { x: 168, y: 536, s: 1.02 }, { x: 348, y: 536, s: 1.02 },
+      { x: 852, y: 536, s: 1.02 }, { x: 1032, y: 536, s: 1.02 }
+    ];
+    var robes = ["#2C2620", "#342A1E", "#2A2129", "#332524"];
+    var svgns = "http://www.w3.org/2000/svg";
+    spots.forEach(function (p, i) {
+      var mirror = p.x > 600 ? 1 : -1;   // 모두 단상을 향해 엎드린다
+      var wrap = document.createElementNS(svgns, "g");
+      wrap.setAttribute("transform",
+        "translate(" + p.x + "," + p.y + ") scale(" + (p.s * mirror) + "," + p.s + ")");
+      var inner = document.createElementNS(svgns, "g");
+      inner.setAttribute("class", "kowtow");
+      inner.style.animationDelay = (-(i * 0.82)).toFixed(2) + "s";
+      inner.innerHTML =
+        '<ellipse cx="-6" cy="4" rx="52" ry="7" fill="#050302" opacity=".55"/>' +
+        '<path d="M-44 2C-44-26-24-42 2-42c22 0 38 16 40 44z" fill="' + robes[i % 4] + '"/>' +
+        '<path d="M-44 2h86v5h-86z" fill="#1A1611"/>' +
+        '<path d="M-30-24c14-9 34-9 48 2" stroke="#8A6E31" stroke-width="1.6" fill="none" opacity=".7"/>' +
+        '<path d="M-66 0c-6-6-2-13 6-13l14 2 4 11z" fill="' + robes[(i + 1) % 4] + '"/>' +
+        '<circle cx="-52" cy="-19" r="10" fill="#D8C3A0"/>' +
+        '<path d="M-64-25h24l3-10c1-4-2-7-6-7h-18c-4 0-7 3-6 7z" fill="#15110C" stroke="#8A6E31" stroke-width="1.2"/>' +
+        '<path d="M-64-26h24v3h-24z" fill="#8A6E31" opacity=".9"/>' +
+        '<path d="M-41-31l10-5 2 6-10 4z" fill="#15110C" stroke="#8A6E31" stroke-width=".8"/>';
+      wrap.appendChild(inner);
+      g.appendChild(wrap);
+    });
+  })();
+
+  /* ═══ 원전(原典) 상소 — 인터넷이나 클로드가 닿지 않아도 늘 열린다 ═══ */
+  function fromCorpus(d) {
+    var C = window.SANGSO_CORPUS;
+    var i = dayIndex(d);
+    var a = C.ch1[i % C.ch1.length];
+    var b = C.ch2[Math.floor(i / 3) % C.ch2.length];
+    return {
+      date: dateKey(d),
+      origin: "原典",
+      hanmadi: C.hanmadi[i % C.hanmadi.length],
+      ch1: { title: a.title, body: a.body.slice() },
+      ch2: { title: b.title, body: b.body.slice() }
+    };
+  }
+
+  /* ═══ 승상께 올리는 청(請) — 오늘의 상소를 새로 짓는 프롬프트 ═══ */
+  function buildPrompt(part, profile, d, recent) {
+    var gz = ganji(d);
+    var when = d.getFullYear() + "년 " + (d.getMonth() + 1) + "월 " + d.getDate() + "일 (" +
+      gz.year + "年 " + gz.day + "日)";
+    var seed = part === 1
+      ? SEEDS_1[dayIndex(d) % SEEDS_1.length]
+      : SEEDS_2[dayIndex(d) % SEEDS_2.length];
+
+    var common =
+      "너는 삼국지의 제갈량 승상이다. 유비가 죽고 촉한의 승상이 된 뒤, 성도의 궁궐에서 「폐하」(이 글을 읽는 사람)께 올리는 상소문을 짓는다.\n\n" +
+      "[폐하에 관한 기록]\n" + profile + "\n\n" +
+      "[오늘]\n" + when + "\n\n" +
+      (recent && recent.length
+        ? "[최근에 이미 올린 한마디 — 뜻이 겹치지 않게 하라]\n" + recent.map(function (s) { return "- " + s; }).join("\n") + "\n\n"
+        : "") +
+      "[문체]\n" +
+      "- 상소문 문체를 끝까지 지킨다. 「臣 亮은 아뢰옵니다」, 「엎드려 바라옵건대」, 「폐하」, 어미는 -하옵니다/-이옵니다/-소서.\n" +
+      "- 비유는 반드시 병법·촉한의 고사·폐하의 소방 현장에서 끌어온다. 현대 용어를 날것으로 쓰지 않는다(클로드코드는 '이 도구', '신', '병부' 등으로 부른다).\n" +
+      "- 마크다운 기호(#, *, -, 1.)를 절대 쓰지 않는다. 문단으로만 쓴다.\n" +
+      "- 한 문단은 3~6문장. 문단 사이는 빈 줄 하나로 나눈다.\n" +
+      "- 폐하를 어린애 다루듯 하지 않는다. 서른 해 현장을 지휘한 분에게 올리는 글이다.\n\n";
+
+    if (part === 1) {
+      return common +
+        "[오늘 지어 올릴 것]\n" +
+        "1) 오늘의 한마디 : 한 문장, 40~70자. 승상이 단상에서 신하들에게 내리는 경구. 오늘 상소 전체를 꿰뚫는 말.\n" +
+        "2) 第一章 : 폐하께서 클로드코드(이 도구)를 잘 쓰시는 법. 폐하는 스스로 초보라 여기신다.\n" +
+        "   - 제목은 한자와 한글을 섞은 3~6자 (보기: 命을 내리는 法, 器를 다루는 法).\n" +
+        "   - 본문은 공백 제외 2,200자 이상. 반드시 이 분량을 채운다. 7~9문단.\n" +
+        "   - 오늘의 주제 축 : " + seed + "\n" +
+        "   - 폐하의 실제 업무(화재방어 검토회의 자료, 소방시설 3D 시각화, 한글 공문, 엑셀 서식) 중 최소 둘을 구체적으로 예로 든다.\n" +
+        "   - 마지막 문단 앞에 오늘 당장 실행할 수 있는 한 가지를 분명히 지목한다.\n\n" +
+        "[형식 — 아래 표식을 그대로 쓰고 다른 말은 일절 덧붙이지 않는다]\n" +
+        "[한마디]\n(한 문장)\n[제목]\n(제목)\n[본문]\n(문단)\n\n(문단)\n";
+    }
+    return common +
+      "[오늘 지어 올릴 것]\n" +
+      "第二章 : 폐하의 생업과 삶의 방향에 관한 상소.\n" +
+      "   - 제목은 한자 3~5자 (보기: 五年之計, 知止之明).\n" +
+      "   - 본문은 공백 제외 3,200자 이상. 반드시 이 분량을 채운다. 9~12문단.\n" +
+      "   - 오늘의 주제 축 : " + seed + "\n" +
+      "   - 폐하의 형세(나이, 남은 재직 기간, 퇴직 시점, 서른 해의 현장 경험)를 초반에 한 번 정리하고 시작한다.\n" +
+      "   - 마지막 문단에 오늘 하실 한 가지를 구체적으로 지목한다.\n\n" +
+      "[반드시 지킬 금도]\n" +
+      "- 재산·투자·매매·세금은 원칙과 태도만 말한다. 특정 종목·시기·매수매도·절세 방법을 지시하지 않는다. 구체적인 판단은 그 일을 업으로 하는 사람에게 물으시라고 권한다.\n" +
+      "- 의학적 진단이나 처방을 하지 않는다. 몸을 살피시라는 권유까지만 한다.\n" +
+      "- 폐하의 기록에 없는 사실을 지어내지 않는다. 모르는 것은 말하지 않는다.\n\n" +
+      "[형식 — 아래 표식을 그대로 쓰고 다른 말은 일절 덧붙이지 않는다]\n" +
+      "[제목]\n(제목)\n[본문]\n(문단)\n\n(문단)\n";
+  }
+
+  function parseParts(text) {
+    var out = { hanmadi: "", title: "", body: [] };
+    var re = /\[(한마디|제목|본문)\]/g, marks = [], m;
+    while ((m = re.exec(text)) !== null) marks.push({ key: m[1], at: m.index, end: re.lastIndex });
+    if (!marks.length) return null;
+    marks.forEach(function (mk, i) {
+      var chunk = text.slice(mk.end, i + 1 < marks.length ? marks[i + 1].at : text.length).trim();
+      if (mk.key === "한마디") out.hanmadi = chunk.split("\n")[0].trim();
+      else if (mk.key === "제목") out.title = chunk.split("\n")[0].trim().replace(/^[「『"']|[」』"']$/g, "");
+      else out.body = chunk.split(/\n\s*\n/).map(function (s) { return s.replace(/\s*\n\s*/g, " ").trim(); })
+                            .filter(function (s) { return s.length > 0; });
+    });
+    return out;
+  }
+
+  /* ═══ 조정의 운영 ═══ */
+  var state = {
+    today: new Date(),
+    db: null,
+    sample: null,
+    profile: DEFAULT_PROFILE,
+    busy: false,
+    current: null
+  };
+
+  function say(msg, warn) {
+    elStatus.textContent = msg || "";
+    elStatus.className = warn ? "status warn" : "status";
+  }
+
+  function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* 사사로운 갈무리일 뿐 */ } }
+
+  function errorWord(code) {
+    switch (code) {
+      case "not_granted":
+      case "sampling_disabled":
+      case "not_declared":
+      case "capability_disabled":
+        return "이 화면에서는 승상을 부를 수 없어, 갈무리해 둔 원전 상소를 펴 두었습니다.";
+      case "rate_limited":
+        return "오늘 승상을 너무 자주 부르셨습니다. 잠시 뒤에 다시 청하소서.";
+      case "session_expired":
+        return "다시 로그인하신 뒤에 청하소서.";
+      case "refused":
+      case "empty_completion":
+        return "승상이 이 청에는 붓을 들지 않으셨습니다. 기록을 손보시고 다시 청하소서.";
+      case "cancelled":
+        return "붓을 거두었습니다.";
+      default:
+        return "상소를 짓던 중 길이 끊겼습니다. 잠시 뒤 다시 청하소서.";
+    }
+  }
+
+  function streamInto(el, title) {
+    el.textContent = "";
+    var p = document.createElement("p");
+    p.className = "streaming";
+    p.textContent = "승상께서 붓을 드셨습니다…";
+    el.appendChild(p);
+    return function (raw) {
+      var parsed = parseParts(raw);
+      var shown = parsed && parsed.body.length ? parsed.body.join("\n\n") : raw;
+      p.textContent = shown;
+      if (parsed && parsed.title && title) title.textContent = parsed.title;
+    };
+  }
+
+  async function compose(force) {
+    if (state.busy || !state.sample) return;
+    state.busy = true;
+    $("btnNew").disabled = true;
+    var d = state.today, key = dateKey(d);
+    say("승상께서 " + key + "의 상소를 지으십니다. 대개 1~3분이 걸리옵니다…");
+
+    var recent = [];
+    try {
+      if (state.db) {
+        var snap = await state.db.collection("memorials").orderBy("date", "desc").limit(5).get();
+        snap.docs.forEach(function (s) { var v = s.data(); if (v && v.hanmadi) recent.push(v.hanmadi); });
+      }
+    } catch (e) { /* 지난 기록이 없어도 상소는 지어진다 */ }
+
+    var opts1 = { modelTier: "complex", cache: force ? false : { gcTime: 43200000 } };
+    var doc = { date: key, origin: "亮" };
+
+    try {
+      elCh1T.textContent = "…";
+      var push1 = streamInto(elCh1B, elCh1T);
+      elCh1C.textContent = "";
+      var r1 = await state.sample(buildPrompt(1, state.profile, d, recent),
+        Object.assign({ onText: function (u) { push1(u.text); } }, opts1));
+      var p1 = parseParts(r1.text);
+      if (!p1 || !p1.body.length) throw { code: "empty_completion" };
+      doc.hanmadi = p1.hanmadi || fromCorpus(d).hanmadi;
+      doc.ch1 = { title: p1.title || "計策", body: p1.body };
+      sayHanmadi(doc.hanmadi);
+      elCh1T.textContent = doc.ch1.title;
+      paint(elCh1B, doc.ch1.body);
+      setCount(elCh1C, doc.ch1.body.join(""), 2000);
+
+      say("제1장을 마치셨습니다. 이어 제2장을 지으십니다…");
+
+      elCh2T.textContent = "…";
+      var push2 = streamInto(elCh2B, elCh2T);
+      elCh2C.textContent = "";
+      var r2 = await state.sample(buildPrompt(2, state.profile, d, recent),
+        Object.assign({ onText: function (u) { push2(u.text); } }, opts1));
+      var p2 = parseParts(r2.text);
+      if (!p2 || !p2.body.length) throw { code: "empty_completion" };
+      doc.ch2 = { title: p2.title || "앞길", body: p2.body };
+      paint(elCh2B, doc.ch2.body);
+      elCh2T.textContent = doc.ch2.title;
+      setCount(elCh2C, doc.ch2.body.join(""), 3000);
+      elSub.textContent = "승상이 " + key + "에 친히 지어 올린 상소";
+
+      state.current = doc;
+      var n1 = noSpace(doc.ch1.body.join("")), n2 = noSpace(doc.ch2.body.join(""));
+      var short = (n1 < 2000 ? "제1장" : "") + (n2 < 3000 ? (n1 < 2000 ? "·제2장" : "제2장") : "");
+      say("오늘의 상소를 올렸습니다. 제1장 " + n1.toLocaleString("ko-KR") + "자, 제2장 " +
+        n2.toLocaleString("ko-KR") + "자, 합 " + (n1 + n2).toLocaleString("ko-KR") + "자." +
+        (short ? " (" + short + "이 기준에 조금 못 미칩니다 — 다시 청하시면 새로 지으십니다.)" : ""), !!short);
+
+      if (state.db) {
+        try { await state.db.doc("memorials/" + key).set(doc); }
+        catch (e) { say("상소는 올렸으나 서고에 갈무리하지 못했습니다. 이 화면에서만 보입니다.", true); }
+      }
+    } catch (e) {
+      var back = fromCorpus(d);
+      if (!doc.ch1) render(back);
+      else { paint(elCh2B, back.ch2.body); elCh2T.textContent = back.ch2.title; setCount(elCh2C, back.ch2.body.join(""), 3000); }
+      say(errorWord(e && e.code), true);
+    } finally {
+      state.busy = false;
+      $("btnNew").disabled = false;
+    }
+  }
+
+  /* ═══ 개장 ═══ */
+  function boot() {
+    var d = state.today;
+    var gz = ganji(d);
+    elDate.textContent = d.getFullYear() + "년 " + (d.getMonth() + 1) + "월 " + d.getDate() + "일 · " +
+      gz.year + "年 " + gz.day + "日";
+
+    var saved = lsGet("sangso.profile");
+    if (saved) state.profile = saved;
+
+    // 아직 아무 것도 닿지 않아도 오늘의 상소가 이미 펴져 있다.
+    state.current = fromCorpus(d);
+    render(state.current);
+    say("갈무리해 둔 원전 상소를 펴 두었습니다. 승상께 여쭙는 중…");
+
+    $("btnPrint").addEventListener("click", function () { window.print(); });
+    $("btnNew").addEventListener("click", function () { compose(true); });
+    $("btnProfile").addEventListener("click", openProfile);
+    $("btnArchive").addEventListener("click", openArchive);
+    document.querySelectorAll("[data-close]").forEach(function (b) {
+      b.addEventListener("click", function () { b.closest("dialog").close(); });
+    });
+    $("btnSaveProfile").addEventListener("click", saveProfile);
+
+    if (!window.claude || typeof window.claude.use !== "function") {
+      say("여기서는 갈무리해 둔 상소가 날마다 돌아가며 펴집니다. 승상께서 새로 지으시게 하려면 claude.ai에 올린 상소창을 여소서.");
+      return;
+    }
+    wire();
+  }
+
+  async function wire() {
+    var db = null, sample = null;
+    try { db = await window.claude.use("db"); } catch (e) { db = null; }
+    try { sample = await window.claude.use("sample"); } catch (e) { sample = null; }
+    state.db = db; state.sample = sample;
+
+    if (db) {
+      try {
+        var pf = await db.doc("config/profile").get();
+        if (pf.exists && pf.data() && pf.data().text) {
+          state.profile = String(pf.data().text);
+          lsSet("sangso.profile", state.profile);
+        }
+      } catch (e) { /* 기록이 없으면 기본 기록으로 간다 */ }
+    }
+
+    var key = dateKey(state.today);
+    if (db) {
+      try {
+        var today = await db.doc("memorials/" + key).get();
+        if (today.exists) {
+          var v = today.data();
+          if (v && v.ch1 && v.ch2) {
+            state.current = v;
+            render(v);
+            say("오늘 " + key + "의 상소는 이미 지어져 서고에 있습니다. 집에서 보시든 청사에서 보시든 같은 상소이옵니다.");
+            return;
+          }
+        }
+      } catch (e) { /* 서고를 못 열어도 아래로 간다 */ }
+    }
+
+    if (!sample) {
+      say("이 화면에서는 승상을 부를 수 없어, 갈무리해 둔 원전 상소를 펴 두었습니다.");
+      return;
+    }
+    if (!db) {
+      say("서고에 닿지 못했습니다. 아래 「오늘의 상소를 새로 청하다」를 누르시면 승상이 새로 지으십니다.");
+      return;
+    }
+    compose(false);
+  }
+
+  /* ═══ 승상의 기록 ═══ */
+  function openProfile() {
+    $("profileText").value = state.profile;
+    $("dlgProfile").showModal();
+  }
+  async function saveProfile() {
+    var txt = $("profileText").value.trim();
+    if (!txt) return;
+    state.profile = txt;
+    lsSet("sangso.profile", txt);
+    $("dlgProfile").close();
+    if (state.db) {
+      try {
+        await state.db.doc("config/profile").set({ text: txt, updated: dateKey(new Date()) });
+        say("기록에 새겼습니다. 집에서든 청사에서든 같은 기록을 보시게 됩니다.");
+        return;
+      } catch (e) { /* 아래로 */ }
+    }
+    say("이 컴퓨터에만 기록했습니다. 다른 곳에서도 쓰시려면 claude.ai에 올린 상소창에서 고치소서.");
+  }
+
+  /* ═══ 서고 ═══ */
+  async function openArchive() {
+    var list = $("archiveList"), note = $("archiveNote");
+    list.textContent = "";
+    note.textContent = "서고를 여는 중…";
+    $("dlgArchive").showModal();
+    if (!state.db) {
+      note.textContent = "이 화면에서는 서고에 닿지 못합니다. claude.ai에 올린 상소창에서 열어 보소서.";
+      return;
+    }
+    try {
+      var snap = await state.db.collection("memorials").orderBy("date", "desc").limit(30).get();
+      if (snap.empty) { note.textContent = "아직 서고에 갈무리된 상소가 없습니다."; return; }
+      note.textContent = "갈무리된 상소 " + snap.size + "편. 골라 펴 보소서.";
+      snap.docs.forEach(function (s) {
+        var v = s.data(); if (!v || !v.ch1 || !v.ch2) return;
+        var li = document.createElement("li");
+        var b = document.createElement("button");
+        b.type = "button";
+        b.innerHTML = '<span class="d"></span><br><span class="t"></span>';
+        b.querySelector(".d").textContent = v.date;
+        b.querySelector(".t").textContent = v.ch1.title + " · " + v.ch2.title;
+        b.addEventListener("click", function () {
+          state.current = v; render(v); $("dlgArchive").close();
+          say(v.date + "의 상소를 펴 두었습니다.");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+        li.appendChild(b); list.appendChild(li);
+      });
+    } catch (e) {
+      note.textContent = "서고를 여는 중 길이 끊겼습니다. 잠시 뒤 다시 여소서.";
+    }
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+})();
+</script>
