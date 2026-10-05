@@ -5,6 +5,7 @@
 ## 들어 있는 것
 | 파일 | 내용 |
 | --- | --- |
+| `ppt-guidelines/전역지침_작업규칙.md` | 응답·엑셀·한글(HWP) 작업 규칙 (개인정보 제외) |
 | `ppt-guidelines/PPT_작성_전역지침.md` | PPT 작성 전역지침(원본) |
 | `ppt-guidelines/PPT_자동서식.bas` | PowerPoint 자동 내어쓰기·동영상 자동재생·최소 15pt VBA |
 | `ppt-global-rules.zip` | claude.ai에 올리는 스킬 파일(챗·코워크·코드 자동 동기화) |
