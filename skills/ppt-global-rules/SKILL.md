@@ -194,15 +194,16 @@ Private Function MarkerPrefixLength(ByVal s As String) As Long
         t = Mid$(t, 2): lead = lead + 1
     Loop
     If Len(t) < 2 Then Exit Function
-    If InStr(MARKERS, Left$(t, 1)) > 0 Then
+    If InStr(MARKERS, Left$(t, 1)) > 0 And Mid$(t, 2, 1) = " " Then
         k = 1
-    ElseIf t Like "#.*" Or t Like "#)*" Then
+    ElseIf t Like "#. *" Or t Like "#) *" Then
+        ' 번호 뒤에 반드시 공백이 있어야 함(9.18. / 3.5km 같은 숫자는 제외)
         k = 2
-    ElseIf t Like "##.*" Or t Like "##)*" Or t Like "(#)*" Then
+    ElseIf t Like "##. *" Or t Like "##) *" Or t Like "(#) *" Then
         k = 3
     ElseIf Mid$(t, 2, 1) = "." Or Mid$(t, 2, 1) = ")" Then
-        ' 가. 나. 다. / 가) 나) 형식(한 글자 + 점/괄호)
-        If AscW(Left$(t, 1)) >= &HAC00 And AscW(Left$(t, 1)) <= &HD7A3 Then k = 2
+        ' 가. 나. 다. / 가) 나) 형식(한 글자 + 점/괄호 + 공백)
+        If Mid$(t, 3, 1) = " " And AscW(Left$(t, 1)) >= &HAC00 And AscW(Left$(t, 1)) <= &HD7A3 Then k = 2
     End If
     If k = 0 Then Exit Function
     ' 기호 뒤 공백까지 포함
